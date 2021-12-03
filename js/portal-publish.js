@@ -85,6 +85,12 @@ define([
           });
         };
       }
+
+      if (this.addLayerNameArea) {
+        this.addLayerNameArea.invalidMessage = this.nls.invalidLayerName;
+        this.addLayerNameArea.missingMessage = this.nls.missingLayerNameMessage;
+      }
+
       //fields name with fields data type
       this.fieldsObj = {
         RegionType: {

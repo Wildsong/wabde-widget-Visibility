@@ -4,6 +4,7 @@ define({
   "portalURLError": "La URL configurada per a la vostra organització de l'ArcGIS Online o el Portal for ArcGIS no és vàlida.",
   "privilegeError": "El vostre rol d'usuari no pot executar l'anàlisi. Per poder-lo executar, l'administrador de l'organització us ha d'atorgar uns <a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">permisos</a> determinats.",
   "noServiceError": "El servei d'anàlisi d'elevació no està disponible. Consulteu les configuracions de la vostra organització de l'ArcGIS Online o del Portal for ArcGIS.",
+  "maximumRangeMessage": "L'interval observable màxim ha de ser més gran que l'interval observable mínim i no pot ser de més de ${limit} ${units}.",
   "serviceURLPlaceholder": "Introduïu la URL de la tasca de geoprocessament de conca visual",
   "setTask": "Defineix",
   "setTaskTitle": "Defineix la tasca de geoprocessament de conca visual",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "Definiu els mil·liradians dels angles com a valor per defecte",
   "defaultObserverHeightLabel": "Unitat d'altura de l'observador per defecte",
   "defaultObservableDistanceLabel": "Unitat de distància observable per defecte",
+  "defaultObserveHeightLabel": "Altura de l'observador per defecte",
+  "defaultMinimumObservableDistanceLabel": "Distància observable mínima per defecte",
+  "defaultMaximumObservableDistanceLabel": "Distància observable màxima per defecte",
   "units": {
     "miles": "Milles",
     "kilometers": "Quilòmetres",

@@ -28,11 +28,13 @@ define([
     'dojo/text!../templates/ColorPickerEditor.html',
     "dijit/form/HorizontalSlider",
     'jimu/dijit/ColorPickerPopup',
+    'dojo/dom-style',
+    'dojo/_base/kernel',
     "dijit/form/NumberSpinner"
   ],
   function (declare, array, lang, Color, on, query, html,
     _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, template,
-    HorizontalSlider, ColorPicker) {
+    HorizontalSlider, ColorPicker, domStyle, kernel) {
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
       _defaultColor: '#485566',
       templateString: template,
@@ -58,7 +60,10 @@ define([
           "aria-label": this.nls.transparency
         }, this.sliderBar);
         this.slider.startup();
-
+        //if locale is VI then add css for "Transparency" label
+        if (kernel.locale === "vi") {
+          domStyle.set(this.sliderBarLabel.domNode, "white-space", "nowrap");
+        }
         var options = [],
           option;
         var lineStyles = [

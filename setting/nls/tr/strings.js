@@ -4,6 +4,7 @@ define({
   "portalURLError": "ArcGIS Online kuruluşunuz veya Portal for ArcGIS için yapılandırılan uygulama geçerli değil.",
   "privilegeError": "Kullanıcı rolünüz analiz gerçekleştiremiyor. Analiz gerçekleştirmek için kuruluşunuzun yöneticisi size belirli <a href=”http://doc.arcgis.com/en/arcgis-online/reference/roles.htm” target=”_blank”>ayrıcalıklar</a> vermelidir.",
   "noServiceError": "Yükselti analizi servisi kullanılabilir değil. Lütfen ArcGIS Online kuruluşunuzu veya Portal for ArcGIS yapılandırmalarını kontrol edin.",
+  "maximumRangeMessage": "Maksimum Gözlemlenebilir Aralık Minimum Gözlemlenebilir Aralıktan büyük olmalı ve ${limit} ${units} daha fazla olmamalıdır.",
   "serviceURLPlaceholder": "Lütfen Görüş Alanı Coğrafi İşlem görevi URL’sini girin",
   "setTask": "Ayarla",
   "setTaskTitle": "Görüş Alanı Coğrafi İşlem Görevini Ayarla",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "Açılar için varsayılan olarak mil seç",
   "defaultObserverHeightLabel": "Varsayılan Gözlemci Yüksekliği birimi",
   "defaultObservableDistanceLabel": "Varsayılan Gözlemlenebilir Uzaklık birimi",
+  "defaultObserveHeightLabel": "Varsayılan Gözlemci Yüksekliği",
+  "defaultMinimumObservableDistanceLabel": "Varsayılan Minimum Gözlemlenebilir Mesafe",
+  "defaultMaximumObservableDistanceLabel": "Varsayılan Maksimum Gözlemlenebilir Mesafe",
   "units": {
     "miles": "Mil",
     "kilometers": "Kilometre",

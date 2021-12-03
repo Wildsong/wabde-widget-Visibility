@@ -4,6 +4,7 @@ define({
   "portalURLError": "Konfigurovaná URL pre vašu ArcGIS Online organizáciu alebo Portal pre ArcGIS nie je platná.",
   "privilegeError": "Vaša rola používateľa nemôže vykonať analýzu. Ak chcete vykonať analýzu, správca vašej organizácie vám musí udeliť určité<a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">oprávnenia</a>.",
   "noServiceError": "Služba analýzy nadmorskej výšky nie je dostupná. Prosím skontrolujte vašu ArcGIS Online organizačnú alebo Portal pre ArcGIS konfiguráciu.",
+  "maximumRangeMessage": "Maximálny pozorovateľný rozsah musí byť väčší ako minimálny porozovateľný rozsah a nemôže byť väčší ako ${limit}${units}.",
   "serviceURLPlaceholder": "Prosím vložte URL geoprocesnej úlohy pohľadu",
   "setTask": "Nastaviť",
   "setTaskTitle": "Nastaviť geoprocesnú úlohu analýzy viditeľnosti",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "Predvolene nastaviť mily pre uhly",
   "defaultObserverHeightLabel": "Predvolená jednotka výšky pozorovateľa",
   "defaultObservableDistanceLabel": "Predvolená jednotka pozorovateľnej vzdialenosti",
+  "defaultObserveHeightLabel": "Predvolená výška pozorovateľa",
+  "defaultMinimumObservableDistanceLabel": "Predvolená minimálna pozorovateľná vzdialenosť",
+  "defaultMaximumObservableDistanceLabel": "Predvolená maximálna pozorovateľná vzdialenosť",
   "units": {
     "miles": "Míle",
     "kilometers": "Kilometre",

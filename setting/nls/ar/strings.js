@@ -4,6 +4,7 @@ define({
   "portalURLError": "عنوان URL المكون لمؤسسة ArcGIS Online الخاصة بك أو Portal for ArcGIS غير صالح.",
   "privilegeError": "دور المستخدم الخاص بك لا يمكنه إجراء تحليل. لتنفيذ التحليل، يتعين على مسئول المؤسسة منحك <a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">امتيازات</a> محددة.",
   "noServiceError": "خدمة تحليل الارتفاع غير متوفرة. يرجى التحقق من تكوينات مؤسسة ArcGIS Online أو Portal for ArcGIS.",
+  "maximumRangeMessage": "يجب أن يكون الحد الأقصى للنطاق الملحوظ أكبر من الحد الأدنى للنطاق الملحوظ ولا يمكن أن يكون أكثر من ${limit} ${units}.",
   "serviceURLPlaceholder": "يرجى إدخال عنوان URL لمهمة المعالجة الجغرافية لمجال الرؤية",
   "setTask": "تعيين",
   "setTaskTitle": "تعيين مهمة معالجة جغرافية لمجال الرؤية",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "تعيين أميال للزوايا كإعداد افتراضي",
   "defaultObserverHeightLabel": "وحدة ارتفاع المراقب الافتراضية",
   "defaultObservableDistanceLabel": "وحدة المسافة الافتراضية التي يمكن مراقبتها",
+  "defaultObserveHeightLabel": "ارتفاع المراقب الافتراضية",
+  "defaultMinimumObservableDistanceLabel": "الحد الأدنى الافتراضي للمسافة التي يمكن ملاحظتها",
+  "defaultMaximumObservableDistanceLabel": "الحد الأقصى الافتراضي للمسافة التي يمكن ملاحظتها",
   "units": {
     "miles": "أميال",
     "kilometers": "كيلومتر",

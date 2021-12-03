@@ -180,6 +180,17 @@ define([
        * See https://github.com/Esri/visibility-addin-dotnet/issues/226 for details.
        */
       this.distanceUnitDD.addOption(dojoLang.clone(options));
+      if (this.config.hasOwnProperty("observeHeight")) {
+        this.observerHeight.setValue(this.config.observeHeight);
+      }
+
+      if (this.config.hasOwnProperty("minimumObservableDistanceValue")) {
+        this.minObsRange.setValue(this.config.minimumObservableDistanceValue);
+      }
+
+      if (this.config.hasOwnProperty("maximumObservableDistanceValue")) {
+        this.maxObsRange.setValue(this.config.maximumObservableDistanceValue);
+      }
       //set values in units as per configuration
       this.observerHeightDD.set('value', this.config.defaultObserverHeightUnit);
       this.distanceUnitDD.set('value', this.config.defaultObservableDistanceUnit);
@@ -233,7 +244,9 @@ define([
         this._showPortalURLError(this.nls.portalURLError);
       }
       this.resetInputColor();
-      this._suppoprtAccessibility();
+      setTimeout(dojoLang.hitch(this, function () {
+        this._suppoprtAccessibility();
+      }), 100);
     },
 
     startup: function () {
@@ -707,34 +720,34 @@ define([
     _initAnalysisProcess: function (params) {
       this._createWedges(params.InputObserver.features, params.MinimumRadius,
         params.MaximumRadius).then(dojoLang.hitch(this, function (wedges) {
-        var fullWedgeProjectionDef, wedgeProjectionDef, defList = [],
-          geomService;
-        if (wedges && wedges.length === 2) {
-          //get the geometry service instance
-          geomService = this.appConfig.geometryService;
-          //Project the wedges into map spatial ref,
-          //since the viewshed will be returned in mapSpatialRef
-          wedgeProjectionDef = geometryUtils.getProjectedGeometry(
-            wedges[0], this.map.spatialReference, geomService).then(
-            dojoLang.hitch(this, function (projectedWedge) {
-              this._wedgeGeometry = projectedWedge;
+          var fullWedgeProjectionDef, wedgeProjectionDef, defList = [],
+            geomService;
+          if (wedges && wedges.length === 2) {
+            //get the geometry service instance
+            geomService = this.appConfig.geometryService;
+            //Project the wedges into map spatial ref,
+            //since the viewshed will be returned in mapSpatialRef
+            wedgeProjectionDef = geometryUtils.getProjectedGeometry(
+              wedges[0], this.map.spatialReference, geomService).then(
+                dojoLang.hitch(this, function (projectedWedge) {
+                  this._wedgeGeometry = projectedWedge;
 
-            })
-          );
-          defList.push(wedgeProjectionDef);
-          fullWedgeProjectionDef = geometryUtils.getProjectedGeometry(
-            wedges[1], this.map.spatialReference, geomService).then(
-            dojoLang.hitch(this, function (projectedFullWedge) {
-              this._fullWedgeGeometry = projectedFullWedge;
-            })
-          );
-          defList.push(fullWedgeProjectionDef);
-          //once both the wedges are projected create viewshed and process it for dispalying
-          dojoAll(defList).then(dojoLang.hitch(this, function () {
-            this._createViewShed(params);
-          }));
-        }
-      }));
+                })
+              );
+            defList.push(wedgeProjectionDef);
+            fullWedgeProjectionDef = geometryUtils.getProjectedGeometry(
+              wedges[1], this.map.spatialReference, geomService).then(
+                dojoLang.hitch(this, function (projectedFullWedge) {
+                  this._fullWedgeGeometry = projectedFullWedge;
+                })
+              );
+            defList.push(fullWedgeProjectionDef);
+            //once both the wedges are projected create viewshed and process it for dispalying
+            dojoAll(defList).then(dojoLang.hitch(this, function () {
+              this._createViewShed(params);
+            }));
+          }
+        }));
     },
 
     /**
@@ -910,7 +923,7 @@ define([
      * Button click event, Validate and get user inputs and initiates analysis
      */
     createButtonWasClicked: function () {
-      if (this.minObsRange.isValid() &&
+      if (this.inputControl.getMapCoordinateDD() && this.minObsRange.isValid() &&
         this.maxObsRange.isValid() && this.observerHeight.isValid() &&
         parseInt(this.FOVInput.value, 10) !== 0) {
         var newObserver = new Graphic(this.inputControl.getMapCoordinateDD());
@@ -946,6 +959,20 @@ define([
       this.angleUnits.setValue(this.config.defaultAngleUnits);
       this.observerHeightDD.set("value", this.config.defaultObserverHeightUnit);
       this.distanceUnitDD.set("value", this.config.defaultObservableDistanceUnit);
+      if (this.config.hasOwnProperty("observeHeight")) {
+        this.observerHeight.setValue(this.config.observeHeight);
+      }
+      if (this.config.hasOwnProperty("minimumObservableDistanceValue")) {
+        this.minObsRange.setValue(this.config.minimumObservableDistanceValue);
+      }
+      if (this.config.hasOwnProperty("maximumObservableDistanceValue")) {
+        //call this in timeout since on min value change max will be set to min+1
+        setTimeout(dojoLang.hitch(this, function () {
+          this.maxObsRange.setValue(this.config.maximumObservableDistanceValue);
+        }), 100);
+      }
+      //call this so that, constarints will be updated with the default values
+      this.minObsRangeKeyWasPressed();
       this.graphicsLayer.clear();
       this.inputControl.clear();
       //reset dialog
@@ -1082,14 +1109,14 @@ define([
           "value": 1,
           "symbol": {
             "color": [visibleSectionFillColor.r,
-              visibleSectionFillColor.g,
-              visibleSectionFillColor.b,
+            visibleSectionFillColor.g,
+            visibleSectionFillColor.b,
               visibleSectionFillTrans
             ],
             "outline": {
               "color": [visibleSectionOutlineColor.r,
-                visibleSectionOutlineColor.g,
-                visibleSectionOutlineColor.b,
+              visibleSectionOutlineColor.g,
+              visibleSectionOutlineColor.b,
                 visibleSectionOutlineTrans
               ],
               "width": 0.75,
@@ -1103,14 +1130,14 @@ define([
           "value": 0,
           "symbol": {
             "color": [nonVisibleSectionFillColor.r,
-              nonVisibleSectionFillColor.g,
-              nonVisibleSectionFillColor.b,
+            nonVisibleSectionFillColor.g,
+            nonVisibleSectionFillColor.b,
               nonVisibleSectionFillTrans
             ],
             "outline": {
               "color": [nonVisibleSectionOutlineColor.r,
-                nonVisibleSectionOutlineColor.g,
-                nonVisibleSectionOutlineColor.b,
+              nonVisibleSectionOutlineColor.g,
+              nonVisibleSectionOutlineColor.b,
                 nonVisibleSectionOutlineTrans
               ],
               "width": 1,
@@ -1153,14 +1180,14 @@ define([
           "value": 1,
           "symbol": {
             "color": [visibleSectionFillColor.r,
-              visibleSectionFillColor.g,
-              visibleSectionFillColor.b,
+            visibleSectionFillColor.g,
+            visibleSectionFillColor.b,
               visibleSectionFillTrans
             ],
             "outline": {
               "color": [visibleSectionOutlineColor.r,
-                visibleSectionOutlineColor.g,
-                visibleSectionOutlineColor.b,
+              visibleSectionOutlineColor.g,
+              visibleSectionOutlineColor.b,
                 visibleSectionOutlineTrans
               ],
               "width": 0.75,
@@ -1174,14 +1201,14 @@ define([
           "value": 0,
           "symbol": {
             "color": [nonVisibleSectionFillColor.r,
-              nonVisibleSectionFillColor.g,
-              nonVisibleSectionFillColor.b,
+            nonVisibleSectionFillColor.g,
+            nonVisibleSectionFillColor.b,
               nonVisibleSectionFillTrans
             ],
             "outline": {
               "color": [nonVisibleSectionOutlineColor.r,
-                nonVisibleSectionOutlineColor.g,
-                nonVisibleSectionOutlineColor.b,
+              nonVisibleSectionOutlineColor.g,
+              nonVisibleSectionOutlineColor.b,
                 nonVisibleSectionOutlineTrans
               ],
               "width": 1,

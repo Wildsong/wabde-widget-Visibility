@@ -4,6 +4,7 @@ define({
   "portalURLError": "L'URL dell'organizzazione ArcGIS Online o di Portal for ArcGIS configurato non è valido.",
   "privilegeError": "Il ruolo utente assegnato non consente di eseguire analisi. Per poter eseguire l'analisi, l'amministratore dell'organizzazione deve concedere all’utente determinati <a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">privilegi</a>.",
   "noServiceError": "Servizio di analisi elevazione non disponibile. Verificare le configurazioni dell’organizzazione ArcGIS Online o di Portal for ArcGIS.",
+  "maximumRangeMessage": "L'intervallo massimo osservabile deve essere maggiore dell'intervallo minimo osservabile e non può essere superiore a ${limit} ${units}.",
   "serviceURLPlaceholder": "Inserire l’URL dell’attività del campo di visibilità",
   "setTask": "Imposta",
   "setTaskTitle": "Inserire l’attività del campo di visibilità",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "Imposta miglia per angoli come impostazione predefinita",
   "defaultObserverHeightLabel": "Unità altezza dell’osservatore predefinita",
   "defaultObservableDistanceLabel": "Unità distanza dell’osservatore predefinita",
+  "defaultObserveHeightLabel": "Altezza predefinita dell'osservatore",
+  "defaultMinimumObservableDistanceLabel": "Distanza minima osservabile predefinita",
+  "defaultMaximumObservableDistanceLabel": "Distanza massima osservabile predefinita",
   "units": {
     "miles": "Miglia",
     "kilometers": "Chilometri",

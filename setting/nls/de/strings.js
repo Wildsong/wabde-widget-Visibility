@@ -4,6 +4,7 @@ define({
   "portalURLError": "Die konfigurierte URL zu Ihrer ArcGIS Online-Organisation oder zu Portal for ArcGIS ist ungültig.",
   "privilegeError": "Ihre Benutzerrolle kann keine Analyse durchführen. Um Analysen durchführen zu können, muss Ihnen der Administrator Ihrer Organisation bestimmte <a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">Berechtigungen</a> zuweisen.",
   "noServiceError": "Höhenanalyse-Service nicht verfügbar. Überprüfen Sie die Konfiguration Ihrer ArcGIS Online-Organisation oder von Portal for ArcGIS.",
+  "maximumRangeMessage": "Maximaler Beobachtungsbereich muss größer als der minimale Beobachtungsbereich sein und darf ${limit} ${units} nicht überschreiten.",
   "serviceURLPlaceholder": "Geben Sie die URL des Sichtfeld-Geoverarbeitungs-Task ein.",
   "setTask": "Festlegen",
   "setTaskTitle": "Sichtfeld-Geoverarbeitungs-Task festlegen",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "Für Winkel Strich als Standard festlegen",
   "defaultObserverHeightLabel": "Standardeinheit für die Beobachterhöhe",
   "defaultObservableDistanceLabel": "Standardeinheit für den Beobachtungsabstand",
+  "defaultObserveHeightLabel": "Standardmäßige Beobachterhöhe",
+  "defaultMinimumObservableDistanceLabel": "Standardmäßiger minimaler Beobachtungsabstand",
+  "defaultMaximumObservableDistanceLabel": "Standardmäßiger maximaler Beobachtungsabstand",
   "units": {
     "miles": "Meilen",
     "kilometers": "Kilometer",

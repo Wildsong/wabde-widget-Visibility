@@ -4,6 +4,7 @@ define({
   "portalURLError": "Konfigurētais vietrādis (URL) uz jūsu ArcGIS Online organizāciju vai Portal for ArcGIS nav derīgs.",
   "privilegeError": "Ar jums piešķirto lomu nevar veikt analīzi. Lai veiktu analīzi, jūsu organizācijas administratoram jāpiešķir jums atbilstīgu <a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">atļauju</a>.",
   "noServiceError": "Augstuma analīzes serviss nav pieejams. Lūdzu, pārbaudiet savu ArcGIS Online organizācijas vai Portal for ArcGIS konfigurāciju.",
+  "maximumRangeMessage": "Maksimālajam novērojamajam diapazonam ir jābūt lielākam par Minimālo novērojamo diapazonu, un tas nevar būt lielāks par ${limit} ${units}.",
   "serviceURLPlaceholder": "Lūdzu, ievadiet redzamības lauka ģeoapstrādes uzdevuma URL",
   "setTask": "Uzstādīt",
   "setTaskTitle": "Iestatīt redzamības lauka ģeoapstrādes uzdevumu",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "Iestatīt tūkstošdaļas leņķiem kā noklusējumu",
   "defaultObserverHeightLabel": "Noklusējuma vērotāja augstuma mērvienība",
   "defaultObservableDistanceLabel": "Noklusējuma novērojama attāluma mērvienība",
+  "defaultObserveHeightLabel": "Noklusējuma vērotāja augstums",
+  "defaultMinimumObservableDistanceLabel": "Noklusējuma minimālais novērojamais attālums",
+  "defaultMaximumObservableDistanceLabel": "Noklusējuma maksimālais novērojamais attālums",
   "units": {
     "miles": "Jūdzes",
     "kilometers": "Kilometri",

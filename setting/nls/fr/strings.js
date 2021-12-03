@@ -4,6 +4,7 @@ define({
   "portalURLError": "L’URL configurée pour votre organisation ArcGIS Online ou Portal for ArcGIS n’est pas valide.",
   "privilegeError": "Votre rôle d’utilisateur ne peut pas réaliser d’analyse. Pour effectuer une analyse, l’administrateur de votre organisation doit vous accorder certains <a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">privilèges</a>.",
   "noServiceError": "Le service d’analyse d’altitude n’est pas disponible. Vérifiez les configurations de votre organisation ArcGIS Online ou Portal for ArcGIS.",
+  "maximumRangeMessage": "La plage observable maximale doit être supérieure à la plage observable minimale et ne doit pas dépasser ${limit}${units}.",
   "serviceURLPlaceholder": "Saisissez l’URL de la tâche de géotraitement du champ de vision",
   "setTask": "Définir",
   "setTaskTitle": "Définir la tâche de géotraitement du champ de vision",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "Définir des valeurs en mils pour les angles par défaut",
   "defaultObserverHeightLabel": "Unité de hauteur de l’observateur par défaut",
   "defaultObservableDistanceLabel": "Unité de distance observable par défaut",
+  "defaultObserveHeightLabel": "Hauteur de l’observateur par défaut",
+  "defaultMinimumObservableDistanceLabel": "Distance observable minimale par défaut",
+  "defaultMaximumObservableDistanceLabel": "Distance observable maximale par défaut",
   "units": {
     "miles": "Miles",
     "kilometers": "Kilomètres",

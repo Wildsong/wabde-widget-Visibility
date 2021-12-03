@@ -4,6 +4,7 @@ define({
   "portalURLError": "ArcGIS Online'i organisatsiooni veebilehe või Portal for ArcGIS-i konfigureeritud URL ei ole kehtiv.",
   "privilegeError": "Teie kasutajaroll ei luba teha analüüsi. Analüüsi tegemiseks peab teie organisatsiooni administraator andma teile teatud <a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">õigused</a>.",
   "noServiceError": "Kõrgusanalüüsi teenus pole saadaval. Kontrollige ArcGIS Online'i organisatsiooni veebilehe või Portal for ArcGIS-i konfiguratsioone.",
+  "maximumRangeMessage": "Maksimaalne vaadeldav vahemik peab olema suurem kui minimaalne vaadeldav vahemik ja ei tohi ületada ${limit} ${units}.",
   "serviceURLPlaceholder": "Sisestage vaatevälja geotöötluse toimingu URL",
   "setTask": "Määra",
   "setTaskTitle": "Määrake vaatevälja geotöötluse toiming",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "Kasuta nurkade vaikeühikuna milliradiaane",
   "defaultObserverHeightLabel": "Vaatleja kõrguse vaikeühik",
   "defaultObservableDistanceLabel": "Vaadeldava kauguse vaikeühik",
+  "defaultObserveHeightLabel": "Vaatleja vaikekõrgus",
+  "defaultMinimumObservableDistanceLabel": "Minimaalne vaadeldav vaikekaugus",
+  "defaultMaximumObservableDistanceLabel": "Maksimaalne vaadeldav vaikekaugus",
   "units": {
     "miles": "mi",
     "kilometers": "km",

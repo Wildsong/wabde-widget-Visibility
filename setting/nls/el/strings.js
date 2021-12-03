@@ -4,6 +4,7 @@ define({
   "portalURLError": "Η παραμετροποιημένη διεύθυνση URL για τον οργανισμό σας στο ArcGIS Online ή για το Portal for ArcGIS δεν είναι έγκυρη.",
   "privilegeError": "Ο ρόλος χρήστη σας δεν μπορεί να εκτελέσει ανάλυση. Για να μπορέσετε να εκτελέσετε ανάλυση, ο διαχειριστής του οργανισμού σας χρειάζεται να σας χορηγήσει ορισμένα <a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">δικαιώματα</a>.",
   "noServiceError": "Η υπηρεσία ανάλυσης υψομέτρου δεν είναι διαθέσιμη. Ελέγξτε τις παραμετροποιήσεις σας για τον οργανισμό σας στο ArcGIS Online ή για το Portal for ArcGIS.",
+  "maximumRangeMessage": "Η Μέγιστη παρατηρήσιμη περιοχή πρέπει να είναι μεγαλύτερη από την Ελάχιστη παρατηρήσιμη περιοχή και δεν μπορεί να είναι μεγαλύτερη από ${limit} ${units}.",
   "serviceURLPlaceholder": "Καταχωρίστε τη διεύθυνση URL της εργασίας γεωεπεξεργασίας ανάλυσης ορατότητας.",
   "setTask": "Ορισμός",
   "setTaskTitle": "Καθορισμός εργασίας γεωεπεξεργασίας ανάλυσης ορατότητας",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "Καθορισμός mil ως προεπιλεγμένης μονάδας για γωνίες",
   "defaultObserverHeightLabel": "Προεπιλεγμένη μονάδα ύψους θέσης παρατήρησης",
   "defaultObservableDistanceLabel": "Προεπιλεγμένη μονάδα παρατηρήσιμης απόστασης",
+  "defaultObserveHeightLabel": "Προεπιλεγμένο ύψος παρατηρητή",
+  "defaultMinimumObservableDistanceLabel": "Προεπιλεγμένη ελάχιστη παρατηρήσιμη απόσταση",
+  "defaultMaximumObservableDistanceLabel": "Προεπιλεγμένη μέγιστη παρατηρήσιμη απόσταση",
   "units": {
     "miles": "Μίλια",
     "kilometers": "Χιλιόμετρα",

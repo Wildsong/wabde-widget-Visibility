@@ -4,6 +4,7 @@ define({
   "portalURLError": "Den konfigurerte URL-en til ArcGIS Online-organisasjonen eller Portal for ArcGIS er ikke gyldig.",
   "privilegeError": "Brukerrollen din har kan ikke utføre analyser. Hvis du vil utføre analyser, må administratoren i organisasjonen gi deg bestemte <a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">rettigheter</a>.",
   "noServiceError": "Høydeanalysetjeneste er ikke tilgjengelig. Sjekk konfigurasjonen for ArcGIS Online-organisasjonen eller Portal for ArcGIS.",
+  "maximumRangeMessage": "Største observasjonsområde må være større enn minste observasjonsområde og kan ikke være mer enn ${limit} ${units}.",
   "serviceURLPlaceholder": "Oppgi URL for geoprosesseringsoppgave for utsiktsområde",
   "setTask": "Angi",
   "setTaskTitle": "Angi geoprosesseringsoppgave for utsiktsområde",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "Sett streker for vinkler som standard",
   "defaultObserverHeightLabel": "Standardenhet for tilskuerhøyde",
   "defaultObservableDistanceLabel": "Standardenhet for observerbar avstand",
+  "defaultObserveHeightLabel": "Standard tilskuerhøyde",
+  "defaultMinimumObservableDistanceLabel": "Standard for minste observerbare avstand",
+  "defaultMaximumObservableDistanceLabel": "Standard for største observerbare avstand",
   "units": {
     "miles": "Miles",
     "kilometers": "Kilometer",

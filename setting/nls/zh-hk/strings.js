@@ -4,6 +4,7 @@ define({
   "portalURLError": "為 ArcGIS Online 組織或 Portal for ArcGIS 配置的 URL 無效。",
   "privilegeError": "您的使用者角色無法執行分析。 為了執行分析，您的組織管理員需要將特定的<a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">權限</a>授與您。",
   "noServiceError": "高程分析服務不可用。 請勾選您的 ArcGIS Online 組織或 Portal for ArcGIS 配置。",
+  "maximumRangeMessage": "觀察者範圍上限必須大於觀察者範圍下限，且不可超過 ${limit} ${units}。",
   "serviceURLPlaceholder": "請輸入視域地理處理任務 URL",
   "setTask": "設定",
   "setTaskTitle": "設定視域地理處理任務",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "設定角度的密爾預設值",
   "defaultObserverHeightLabel": "預設觀察者高度單位",
   "defaultObservableDistanceLabel": "預設可觀察距離單位",
+  "defaultObserveHeightLabel": "預設觀察者高度",
+  "defaultMinimumObservableDistanceLabel": "預設最短可觀察距離",
+  "defaultMaximumObservableDistanceLabel": "預設最長可觀察距離",
   "units": {
     "miles": "英哩",
     "kilometers": "公里",

@@ -4,6 +4,7 @@ define({
   "portalURLError": "Konfigurirani URL vaše organizacije za ArcGIS Online ili Portal for ArcGIS nije ispravan.",
   "privilegeError": "Vaša korisnička uloga ne može izvršiti analizu. Za izvršavanje analize administrator vaše organizacije treba vam dodijeliti određene <a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">privilegije</a>.",
   "noServiceError": "Usluga analize visine terena nije dostupna. Provjerite svoje konfiguracije organizacije za ArcGIS Online ili Portal for ArcGIS.",
+  "maximumRangeMessage": "Maksimalni raspon koji se može promatrati mora biti veći od minimalnog raspona koji se može promatrati i ne smije biti veći od ${limit} ${units}.",
   "serviceURLPlaceholder": "Unesite URL zadatka geoprocesiranja usluge Stvori vidljivost",
   "setTask": "Postavi",
   "setTaskTitle": "Postavi zadatak geoprocesiranja usluge Stvori vidljivost",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "Postavite mjernu jedinicu mil za kutove kao zadanu",
   "defaultObserverHeightLabel": "Zadana jedinica za visinu promatrača",
   "defaultObservableDistanceLabel": "Zadana jedinica za udaljenost promatrača",
+  "defaultObserveHeightLabel": "Zadana visina promatrača",
+  "defaultMinimumObservableDistanceLabel": "Zadana minimalna udaljenost koja se može promatrati",
+  "defaultMaximumObservableDistanceLabel": "Zadana maksimalna udaljenost koja se može promatrati",
   "units": {
     "miles": "Milje",
     "kilometers": "Kilometri",

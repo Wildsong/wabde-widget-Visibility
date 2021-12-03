@@ -4,6 +4,7 @@ define({
   "portalURLError": "Skonfigurowany adres URL instytucji w usłudze ArcGIS Online lub witryny Portal for ArcGIS jest niepoprawny.",
   "privilegeError": "Twoja rola użytkownika nie umożliwia wykonania analizy. Aby możliwe było wykonanie analizy, niezbędne jest nadanie Tobie przez administratora instytucji odpowiednich <a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">uprawnień</a>.",
   "noServiceError": "Usługa analizy wysokościowej jest niedostępna. Sprawdź konfigurację instytucji w usłudze ArcGIS Online lub witryny Portal for ArcGIS.",
+  "maximumRangeMessage": "Maksymalny zakres możliwy do obserwacji musi być większy niż minimalny zakres możliwy do obserwacji i nie może przekraczać ${limit} ${units}.",
   "serviceURLPlaceholder": "Wprowadź adres URL zadania geoprzetwarzania obszaru widoczności",
   "setTask": "Ustaw",
   "setTaskTitle": "Skonfiguruj zadanie geoprzetwarzania obszaru widoczności",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "Ustaw miliradiany jako domyślną jednostkę dla kątów",
   "defaultObserverHeightLabel": "Domyślna jednostka wysokości obserwatora",
   "defaultObservableDistanceLabel": "Domyślna jednostka widocznej odległości obserwatora",
+  "defaultObserveHeightLabel": "Domyślna wysokość obserwatora",
+  "defaultMinimumObservableDistanceLabel": "Domyślna minimalna widoczna odległość",
+  "defaultMaximumObservableDistanceLabel": "Domyślna maksymalna widoczna odległość",
   "units": {
     "miles": "Mile",
     "kilometers": "Kilometry",

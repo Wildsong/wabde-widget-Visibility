@@ -4,6 +4,7 @@ define({
   "portalURLError": "La URL configurada para su organización de ArcGIS Online o Portal for ArcGIS no es válida.",
   "privilegeError": "Su rol de usuario no puede realizar análisis. Para realizar análisis, el administrador de su organización debe concederle ciertos <a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">privilegios</a>.",
   "noServiceError": "Servicio de análisis de elevación no disponible. Compruebe la configuración de su organización de ArcGIS Online o Portal for ArcGIS.",
+  "maximumRangeMessage": "El rango máximo observable debe ser mayor que el rango mínimo observable y no puede ser más de ${limit} ${units}.",
   "serviceURLPlaceholder": "Introduzca la URL de la tarea de geoprocesamiento de cuenca visual",
   "setTask": "Establecer",
   "setTaskTitle": "Definir tarea de geoprocesamiento de cuenca visual",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "Definir mils como unidad predeterminada para ángulos",
   "defaultObserverHeightLabel": "Unidad de altura del observador predeterminada",
   "defaultObservableDistanceLabel": "Unidad de distancia observable predeterminada",
+  "defaultObserveHeightLabel": "Altura de observador predeterminada",
+  "defaultMinimumObservableDistanceLabel": "Distancia mínima observable predeterminada",
+  "defaultMaximumObservableDistanceLabel": "Distancia máxima observable predeterminada",
   "units": {
     "miles": "Millas",
     "kilometers": "Kilómetros",

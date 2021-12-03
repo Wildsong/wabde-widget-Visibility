@@ -4,6 +4,7 @@ define({
   "portalURLError": "ArcGIS Online 기관 또는 Portal for ArcGIS에 구성된 URL이 유효하지 않습니다.",
   "privilegeError": "귀하의 사용자 역할은 분석을 수행할 수 없습니다. 분석을 수행하려면 내 기관의 관리자가 특정 <a href=”http://doc.arcgis.com/en/arcgis-online/reference/roles.htm” target=”_blank”>권한</a>을 부여해야 합니다.",
   "noServiceError": "고도 분석 서비스를 사용할 수 없습니다. ArcGIS Online 기관 또는 Portal for ArcGIS의 구성을 확인하세요.",
+  "maximumRangeMessage": "관측 가능한 최대 범위는 관측 가능한 최소 범위보다 커야 하며 ${limit} ${units}을(를) 초과할 수 없습니다.",
   "serviceURLPlaceholder": "가시권역 지오프로세싱 작업 URL을 입력하세요.",
   "setTask": "설정",
   "setTaskTitle": "가시권역 지오프로세싱 작업 설정",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "밀을 각도의 기본 단위로 설정",
   "defaultObserverHeightLabel": "기본 관측자 높이 단위",
   "defaultObservableDistanceLabel": "기본 관측 가능 거리 단위",
+  "defaultObserveHeightLabel": "기본 관측자 높이",
+  "defaultMinimumObservableDistanceLabel": "기본 관측 가능 최소 거리",
+  "defaultMaximumObservableDistanceLabel": "기본 관측 가능 최대 거리",
   "units": {
     "miles": "마일",
     "kilometers": "킬로미터",

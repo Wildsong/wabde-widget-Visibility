@@ -29,8 +29,6 @@ define([
     'dojo/dom-attr',
     'dojo/query',
     'dojo/keys',
-    'dojo/dom',
-    'dijit/registry',
     'jimu/utils',
     'dijit/focus',
     'jimu/dijit/formSelect',
@@ -51,8 +49,6 @@ define([
     domAttr,
     query,
     keys,
-    dom,
-    dijitRegistry,
     utils,
     focusUtils
   ) {
@@ -61,9 +57,12 @@ define([
       templateString: SettingsTemplate,
       selectedSettings: {}, //Holds selected Settings
       colorPickerNodes: [], //Holds an array of color pickers populated at start up
+      colorPickerObjList: [],
 
       constructor: function (options) {
         lang.mixin(this, options);
+        this.colorPickerObjList = [];
+        this.colorPickerNodes = [];
       },
 
       //Load all the options on startup
@@ -93,21 +92,23 @@ define([
             }
           };
         }
-        this.colorPickerNodes = query('.colorPicker', this.domNode);
         array.forEach(this.colorPickerNodes, lang.hitch(this, function (node) {
+          var nodeId = domAttr.get(node, "nodeId");
           node = new ColorPickerEditor({
             nls: this.nls,
-            type: domClass.contains(node, 'Line') ? 'line' : 'fill'
+            type: domClass.contains(node, 'Line') ? 'line' : 'fill',
+            nodeId: nodeId
           }, node);
           node.setValues({
-            "color": symbologySettings ? symbologySettings[node.id].color : this.config.symbology[node.id].color,
+            "color": symbologySettings ? symbologySettings[nodeId].color : this.config.symbology[nodeId].color,
             "transparency": symbologySettings ?
-              symbologySettings[node.id].transparency : this.config.symbology[node.id].transparency
+              symbologySettings[nodeId].transparency : this.config.symbology[nodeId].transparency
           });
           node.startup();
           var styleDropdownValue = symbologySettings ?
-            symbologySettings[node.id].type : this.config.symbology[node.id].type;
+            symbologySettings[nodeId].type : this.config.symbology[nodeId].type;
           node.dropdown.set('value', styleDropdownValue);
+          this.colorPickerObjList.push(node);
         }));
         // Code for Accessibility: keydown for color picker
         var colorPickerDOMNodes = query('.jimu-color-pickerPopup', this.domNode);
@@ -125,7 +126,10 @@ define([
 
       postCreate: function () {
         this.inherited(arguments);
+        this.colorPickerObjList = [];
+        this.colorPickerNodes = [];
         //set class to main container
+        this.colorPickerNodes = query('.colorPicker', this.domNode);
         this._handleClickEvents();
         this.visibleSectionSettingsButton.click();
       },
@@ -222,13 +226,13 @@ define([
        * @memberOf widgets/visibility/Settings
        **/
       onSettingsChanged: function () {
-        array.forEach(this.colorPickerNodes, lang.hitch(this, function (node) {
+        array.forEach(this.colorPickerObjList, lang.hitch(this, function (colorPickerObj) {
           var json = {
-            'color': dijitRegistry.byId(node.id).getValues().color,
-            'transparency': dijitRegistry.byId(node.id).getValues().transparency,
-            'type': dijitRegistry.byId(node.id).dropdown.getValue()
+            'color': colorPickerObj.getValues().color,
+            'transparency': colorPickerObj.getValues().transparency,
+            'type': colorPickerObj.dropdown.getValue()
           };
-          this.selectedSettings[node.id] = json;
+          this.selectedSettings[colorPickerObj.nodeId] = json;
         }));
         this.emit("settingsChanged", this.selectedSettings);
       },
@@ -236,8 +240,8 @@ define([
       validInputs: function () {
         var isValid = true;
         //validate for any invalid values in all colorPicker spinners
-        array.some(this.colorPickerNodes, function (node) {
-          if (!dijitRegistry.byId(node.id).validateSpinner()) {
+        array.some(this.colorPickerObjList, function (colorPickerObj) {
+          if (!colorPickerObj.validateSpinner()) {
             isValid = false;
             return true;
           }
@@ -247,11 +251,13 @@ define([
 
       // Code for Accessibility : function to set last focus node
       _setLastFocusNode: function () {
-        if (domClass.contains(this.nonVisibleSectionSettingsButton, "esriCTLabelSettingsDownButton")) {
-          var lastNonVisibleStyleDOM = query(".dijit", dom.byId('nonVisibleSectionFillColor').lastElementChild)[0];
-          utils.initLastFocusNode(this.refDomNode, lastNonVisibleStyleDOM);
-        } else {
-          utils.initLastFocusNode(this.refDomNode, this.nonVisibleSectionSettingsButton);
+        var index = this.colorPickerObjList.length - 1;
+        if (this.refDomNode) {
+          if (domClass.contains(this.nonVisibleSectionSettingsButton, "esriCTLabelSettingsDownButton")) {
+            utils.initLastFocusNode(this.refDomNode, this.colorPickerObjList[index].dropdown.domNode);
+          } else {
+            utils.initLastFocusNode(this.refDomNode, this.nonVisibleSectionSettingsButton);
+          }
         }
       }
     });

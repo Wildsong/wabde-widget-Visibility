@@ -4,6 +4,7 @@ define({
   "portalURLError": "Указанный URL-адрес вашей организации ArcGIS Online или Portal for ArcGIS не действителен.",
   "privilegeError": "Ваша роль пользователя не может выполнять анализ. Для выполнения анализа, администратор вашей организации должен предоставить вам определенные <a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">права</a>.",
   "noServiceError": "Сервис анализа высот недоступен. Проверьте настройки организации ArcGIS Online или Portal for ArcGIS.",
+  "maximumRangeMessage": "Максимальный наблюдаемый диапазон должен быть больше, чем Минимальный наблюдаемый диапазон и не может превышать ${limit} ${units}.",
   "serviceURLPlaceholder": "Введите URL-адрес задачи геообработки обоюдной видимости",
   "setTask": "Задать",
   "setTaskTitle": "Задать задачу геообработки обоюдной видимости",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "Установить милы для углов по умолчанию",
   "defaultObserverHeightLabel": "Единицы измерения для высоты наблюдателя по умолчанию",
   "defaultObservableDistanceLabel": "Единицы обозреваемого расстояния по умолчанию",
+  "defaultObserveHeightLabel": "Высота наблюдателя по умолчанию",
+  "defaultMinimumObservableDistanceLabel": "Минимальное наблюдаемое расстояние по умолчанию",
+  "defaultMaximumObservableDistanceLabel": "Максимальное наблюдаемое расстояние по умолчанию",
   "units": {
     "miles": "Мили",
     "kilometers": "Километры",

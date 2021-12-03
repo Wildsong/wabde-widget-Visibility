@@ -5,6 +5,7 @@ define({
     portalURLError: "The configured URL to your ArcGIS Online organization or Portal for ArcGIS is not valid.",
     privilegeError: "Your user role cannot perform analysis. In order to perform analysis, the administrator of your organization needs to grant you certain <a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">privileges</a>.",
     noServiceError: "Elevation analysis service not available. Please check your ArcGIS Online organization or Portal for ArcGIS configurations.",
+    maximumRangeMessage: "Maximum Observable Range must be greater than the Minimum Observable Range and cannot be more than ${limit} ${units}.",
 
     serviceURLPlaceholder: "Please input Viewshed Geoprocessing task URL",
     setTask: "Set",
@@ -13,6 +14,9 @@ define({
     defaultMilsForAnglesLabel: "Set mils for angles as default",
     defaultObserverHeightLabel: "Default Observer Height unit",
     defaultObservableDistanceLabel: "Default Observable Distance unit",
+    defaultObserveHeightLabel: "Default Observer Height",
+    defaultMinimumObservableDistanceLabel: "Default Minimum Observable Distance",
+    defaultMaximumObservableDistanceLabel: "Default Maximum Observable Distance",
     units: {
       miles: "Miles",
       kilometers: "Kilometers",

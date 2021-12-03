@@ -17,10 +17,13 @@
 define([
   'dojo/_base/declare',
   'dojo/_base/lang',
+  'dojo/_base/kernel',
   'dojo/dom-class',
   'dojo/on',
   'dojo/dom-attr',
   'dojo/query',
+  'dojo/number',
+  'dojo/string',
   'dojo/keys',
   'dojo/Deferred',
   'dijit/_WidgetsInTemplateMixin',
@@ -34,14 +37,17 @@ define([
   'jimu/dijit/TabContainer3',
   '../js/symbologySettings',
   'dojo/dom-construct',
-  'dijit/form/ValidationTextBox'
+  'dijit/form/NumberTextBox'
 ], function (
   declare,
   lang,
+  dojoKernel,
   domClass,
   on,
   domAttr,
   query,
+  dojoNumber,
+  dojoString,
   keys,
   Deferred,
   _WidgetsInTemplateMixin,
@@ -96,6 +102,11 @@ define([
       this.inherited(arguments);
       this.own(on(this.urlTextBox, "keypress", lang.hitch(this, this.urlChanged)));
       this.own(on(this.setButton, "click", lang.hitch(this, this.setButtonClicked)));
+      this.own(on(this.minimumObservableDistance, 'keyup',
+        lang.hitch(this, this.minObsRangeKeyWasPressed)));
+      this.own(on(this.observableDistanceUnit, 'change',
+        lang.hitch(this, this.observableDistanceUnitChanged)));
+
       this.setConfig(this.config);
       this.busyIndicator = BusyIndicator.create({
         target: this.domNode.parentNode,
@@ -123,27 +134,61 @@ define([
       this._startValidationProcess();
     },
 
+    minObsRangeKeyWasPressed: function () {
+      if (this.minimumObservableDistance.isValid()) {
+        this.maximumObservableDistance.constraints.min = Number(this.minimumObservableDistance.displayedValue) + 0.001;
+        this.maximumObservableDistance.set('value', Number(this.minimumObservableDistance.displayedValue) + 1);
+      }
+    },
+
     setConfig: function (config) {
       var portalURL = this.appConfig.portalUrl;
       if (config.portalUrl) {
         portalURL = config.portalUrl;
       }
+      //Set Portal URL
       this.urlTextBox.set('value', portalURL, false);
-      //set unit values as per prev configuration
+      //Set mils for angles as default
+      if (config.hasOwnProperty("defaultAngleUnits")) {
+        this.angleUnits.setValue(config.defaultAngleUnits);
+      }
+      //Set Default Observer Height
+      if (config.hasOwnProperty("observeHeight")) {
+        this.observerHeight.setValue(config.observeHeight);
+      }
+      //Set Default Observer Height unit
       if (config.hasOwnProperty("defaultObserverHeightUnit")) {
         this.observerHeightUnit.set("value", config.defaultObserverHeightUnit);
       }
+      //Set Default Minimum Observable Distance
+      if (config.hasOwnProperty("minimumObservableDistanceValue")) {
+        this.minimumObservableDistance.setValue(config.minimumObservableDistanceValue);
+      }
+      //Set Default Maximum Observable Distance
+      if (config.hasOwnProperty("maximumObservableDistanceValue")) {
+        this.maximumObservableDistance.setValue(config.maximumObservableDistanceValue);
+      }
+      //Set Default Observable Distance unit
       if (config.hasOwnProperty("defaultObservableDistanceUnit")) {
         this.observableDistanceUnit.set("value", config.defaultObservableDistanceUnit);
-      }
-      if (config.hasOwnProperty("defaultAngleUnits")) {
-        this.angleUnits.setValue(config.defaultAngleUnits);
       }
     },
 
     getConfig: function () {
       var symbologySettings = {};
       if (this.hasError) {
+        return false;
+      }
+      if (!this.observerHeight.isValid()) {
+        this.observerHeight.focus();
+        return false;
+      }
+      if (!this.minimumObservableDistance.isValid()) {
+        this.minimumObservableDistance.focus();
+        return false;
+      }
+      if (!this.maximumObservableDistance.isValid()) {
+        this.maximumObservableDistance.focus();
         return false;
       }
       this._symbologySettingsInstance.onSettingsChanged();
@@ -155,6 +200,9 @@ define([
         "defaultObserverHeightUnit": this.observerHeightUnit.get('value'),
         "defaultObservableDistanceUnit": this.observableDistanceUnit.get('value'),
         "defaultAngleUnits": this.angleUnits.getValue(),
+        "observeHeight": this.observerHeight.get('value'),
+        "minimumObservableDistanceValue": this.minimumObservableDistance.value,
+        "maximumObservableDistanceValue": this.maximumObservableDistance.value,
         "operationalLayer": {
           "name": this.opLayerList.value
         },
@@ -280,7 +328,7 @@ define([
     _containsSupportedCapabilities: function (capabilities) {
       var supported = ["create", "delete", "query", "update", "editing"];
       var isSupported = true;
-      supported.forEach(function(supCap) {
+      supported.forEach(function (supCap) {
         if (capabilities.toLowerCase().split(",").indexOf(supCap) === -1) {
           isSupported = false;
         }
@@ -335,7 +383,8 @@ define([
       tabs = [lineOfSightTab, symbologyTab];
       this.tab = new TabContainer3({
         "tabs": tabs,
-        "style": "{height:100%}"
+        "style": "{height:100%}",
+        "class": "esriCTFullHeight"
       });
       // Handle tabChanged event and set the scroll position to top
       this.own(on(this.tab, "tabChanged", lang.hitch(this, function () {
@@ -362,6 +411,46 @@ define([
         })
       ));
       this._symbologySettingsInstance.startup();
+    },
+
+    observableDistanceUnitChanged: function () {
+      var msg = "",
+        constraints = {};
+      var distanceUnit = this.observableDistanceUnit.get('value');
+      if (distanceUnit) {
+        switch (distanceUnit) {
+          case "miles":
+            constraints.max = 31;
+            break;
+          case "nauticalMiles":
+            constraints.max = 26.9383;
+            break;
+          case "kilometers":
+            constraints.max = 50;
+            break;
+          case "yards":
+            constraints.max = 54680;
+            break;
+          case "feet":
+            constraints.max = 164041;
+            break;
+          case "meters":
+            constraints.max = 50000;
+            break;
+        }
+        //construct invalid message based on selected unit and max value
+        msg = dojoString.substitute(this.nls.maximumRangeMessage, {
+          units: window.jimuNls.units[distanceUnit],
+          limit: dojoNumber.format(constraints.max, {
+            places: 2,
+            locale: dojoKernel.locale
+          })
+        });
+        constraints.min = Number(this.minimumObservableDistance.displayedValue) + 0.001;
+        //set the constraints and range message to the control
+        this.maximumObservableDistance.set("constraints", constraints);
+        this.maximumObservableDistance.set("rangeMessage", msg);
+      }
     }
   });
 });

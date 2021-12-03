@@ -4,6 +4,7 @@ define({
   "portalURLError": "Налаштований URL для вашої організації ArcGIS Online або Portal for ArcGIS не дійсний.",
   "privilegeError": "Користувач не може виконувати аналіз. Для виконання аналізу адміністратор вашої організації повинен надати вам певні <a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">права</a>.",
   "noServiceError": "Сервіс аналізу висот не доступний. Перевірте конфігурацію ArcGIS для вашої організації ArcGIS Online або Portal for ArcGIS.",
+  "maximumRangeMessage": "Максимальний діапазон, який спостерігається, повинен бути більшим, ніж мінімальний діапазон, який спостерігається, та не може становити більше ${limit} ${units}.",
   "serviceURLPlaceholder": "Введіть URL задачі геообробки видимості",
   "setTask": "Задати",
   "setTaskTitle": "Задати задачу геообробки видимості",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "Задати мілі для кутів за замовчуванням",
   "defaultObserverHeightLabel": "Одиниця висоту спостерігача за замовчуванням",
   "defaultObservableDistanceLabel": "Одиниця довжини, що спостерігається, за замовчуванням",
+  "defaultObserveHeightLabel": "Висота спостерігача за замовчуванням",
+  "defaultMinimumObservableDistanceLabel": "Мінімальна довжина, що спостерігається, за замовчуванням",
+  "defaultMaximumObservableDistanceLabel": "Максимальна довжина, що спостерігається, за замовчуванням",
   "units": {
     "miles": "Милі",
     "kilometers": "Кілометри",

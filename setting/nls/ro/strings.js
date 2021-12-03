@@ -4,6 +4,7 @@ define({
   "portalURLError": "Adresa URL configurată a organizației dvs. ArcGIS Online sau a Portal for ArcGIS nu este valabilă.",
   "privilegeError": "Rolul dvs. de utilizator nu poate efectua analize. Pentru a efectua o analiză, administratorul organizației trebuie să vă acorde anumite <a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">privilegii</a>.",
   "noServiceError": "Serviciul de analiză a elevației nu este disponibil. Verificați configurările pentru organizația dvs. ArcGIS Online sau Portal for ArcGIS.",
+  "maximumRangeMessage": "Intervalul Observabil Maxim trebuie să fie mai mare decât Intervalul Observabil Minim și nu poate fi mai mare decât ${limit}${units}.",
   "serviceURLPlaceholder": "Introduceți ULR-ul sarcinii de geoprocesare Viewshed",
   "setTask": "Setare",
   "setTaskTitle": "Setați sarcina de geoprocesare Viewshed",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "Setare mile pentru unghiuri implicit",
   "defaultObserverHeightLabel": "Unitate implicită Înălțimea observatorului",
   "defaultObservableDistanceLabel": "Unitate implicită Distanță observabilă",
+  "defaultObserveHeightLabel": "Înălțimea observatorului implicită",
+  "defaultMinimumObservableDistanceLabel": "Distanță observabilă minimă implicită",
+  "defaultMaximumObservableDistanceLabel": "Distanță observabilă maximă implicită",
   "units": {
     "miles": "Mile",
     "kilometers": "Kilometri",

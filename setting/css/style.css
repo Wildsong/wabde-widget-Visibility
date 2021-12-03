@@ -663,3 +663,12 @@
   display: inline-flex;
   flex-direction: column;
 }
+
+.jimu-widget-visibility-setting .esriCTFullHeight {
+  height: 100%;
+}
+
+.jimu-widget-visibility-setting .jimu-viewstack {
+  height: calc(100% - 40px);
+  overflow: auto;
+}

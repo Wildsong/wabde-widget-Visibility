@@ -4,6 +4,7 @@ define({
   "portalURLError": "ArcGIS Online 組織サイトまたは Portal for ArcGIS の構成された URL が有効ではありません。",
   "privilegeError": "このユーザー ロールでは、解析を実行できません。 解析を実行するには、組織の管理者が特定の<a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">権限</a>を付与する必要があります。",
   "noServiceError": "標高解析サービスが利用できません。 ArcGIS Online 組織サイトまたは Portal for ArcGIS の URL の構成を確認してください。",
+  "maximumRangeMessage": "最大観測範囲は最小観測範囲より大きい必要があり、${limit} ${units} を超えてはなりません。",
   "serviceURLPlaceholder": "可視領域ジオプロセシング タスク URL を入力してください。",
   "setTask": "設定",
   "setTaskTitle": "可視領域ジオプロセシング タスクの設定",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "角度のデフォルトとしてミルを設定",
   "defaultObserverHeightLabel": "デフォルトの観測点の高度単位",
   "defaultObservableDistanceLabel": "デフォルトの観測距離単位",
+  "defaultObserveHeightLabel": "デフォルトの観測点の高度",
+  "defaultMinimumObservableDistanceLabel": "デフォルトの最短観測距離",
+  "defaultMaximumObservableDistanceLabel": "デフォルトの最長観測距離",
   "units": {
     "miles": "マイル",
     "kilometers": "キロメートル",

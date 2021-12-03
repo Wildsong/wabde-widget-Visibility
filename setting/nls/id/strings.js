@@ -4,6 +4,7 @@ define({
   "portalURLError": "URL yang dikonfigurasi ke organisasi ArcGIS Online atau Portal untuk ArcGIS Anda tidak valid.",
   "privilegeError": "Peran pengguna Anda tidak dapat melakukan analisis. Untuk melakukan analisis, administrator organisasi Anda harus memberikan <a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">hak istimewa</a> kepada Anda.",
   "noServiceError": "Layanan analisis elevasi tidak tersedia. Harap periksa konfigurasi organisasi ArcGIS Online atau Portal untuk ArcGIS Anda.",
+  "maximumRangeMessage": "Rentang Maksimum yang Dapat Diamati harus lebih besar dari Rentang Minimum yang Dapat Diamati ${limit} ${units}.",
   "serviceURLPlaceholder": "Harap masukkan URL tugas Geoprocessing Jarak Pandang",
   "setTask": "Atur",
   "setTaskTitle": "Atur Tugas Geoprocessing Jarak Pandang",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "Atur mil untuk sudut sebagai default",
   "defaultObserverHeightLabel": "Unit Tinggi Pengamat Default",
   "defaultObservableDistanceLabel": "Unit Jarak yang Dapat Diamati Default",
+  "defaultObserveHeightLabel": "Tinggi Pengamat Default",
+  "defaultMinimumObservableDistanceLabel": "Jarak Minimum yang Dapat Diamati Default",
+  "defaultMaximumObservableDistanceLabel": "Jarak Maksimum yang Dapat Diamati Default",
   "units": {
     "miles": "Mil",
     "kilometers": "Kilometer",

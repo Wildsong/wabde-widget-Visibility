@@ -4,6 +4,7 @@ define({
   "portalURLError": "De geconfigureerde URL van uw ArcGIS Online-organisatie of Portal for ArcGIS is niet geldig.",
   "privilegeError": "Uw gebruikersrol kan geen analyse uitvoeren. Om de analyse te kunnen uitvoeren, moet de beheerder van uw organisatie u bepaalde a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">machtigingen</a> verlenen.",
   "noServiceError": "Hoogte-analyseservice niet beschikbaar. Controleer uw ArcGIS Online-organisatie of Portal voor ArcGIS-configuraties.",
+  "maximumRangeMessage": "Het maximaal waarneembare bereik moet groter zijn dan het minimum waarneembare bereik en mag niet meer zijn dan ${limit} ${units}.",
   "serviceURLPlaceholder": "Voer de URL van de Viewshedservicetaak in",
   "setTask": "Instellen",
   "setTaskTitle": "Viewshed geoprocessingtaak instellen",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "Stel mil in als standaard voor hoeken",
   "defaultObserverHeightLabel": "Standaardeenheid hoogte waarnemer",
   "defaultObservableDistanceLabel": "Standaardeenheid waarneembare afstand",
+  "defaultObserveHeightLabel": "Standaardhoogte waarnemer",
+  "defaultMinimumObservableDistanceLabel": "Standaardminimum waarneembare afstand",
+  "defaultMaximumObservableDistanceLabel": "Standaardmaximum waarneembare afstand",
   "units": {
     "miles": "Mijl",
     "kilometers": "Kilometer",

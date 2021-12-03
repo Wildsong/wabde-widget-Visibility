@@ -4,6 +4,7 @@ define({
   "portalURLError": "כתובת ה-URL שהוגדרה עבור ארגון ArcGIS Online או הפורטל של ArcGIS אינה חוקית.",
   "privilegeError": "תפקיד המשתמש שלך לא יכול לבצע ניתוח. כדי שתוכל לבצע ניתוח, מנהל המערכת של הארגון צריך להעניק לך ‎<a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">‎הרשאות‎</a>‎ מסוימות.",
   "noServiceError": "שירות ניתוח הגובה לא זמין. בדוק את התצורה של ארגון ArcGIS Online או הפורטל של ArcGIS.",
+  "maximumRangeMessage": "טווח התצפית המרבי חייב להיות גדול מטווח התצפית המינימלי ולא יוכל להיות גדול מ-‎${limit} ${units}.",
   "serviceURLPlaceholder": "הזן כתובת URL של משימת עיבוד גיאוגרפי של שטחים נצפים",
   "setTask": "הגדר",
   "setTaskTitle": "הגדר משימת עיבוד גיאוגרפי של שטחים נצפים",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "הגדר מיילים לזוויות כברירת מחדל",
   "defaultObserverHeightLabel": "ברירת מחדל של יחידת גובה צופה",
   "defaultObservableDistanceLabel": "ברירת מחדל של יחידת מרחק שניתנת לצפייה",
+  "defaultObserveHeightLabel": "ברירת מחדל של גובה צופה",
+  "defaultMinimumObservableDistanceLabel": "ברירת מחדל של מרחק מינימלי שניתן לצפייה",
+  "defaultMaximumObservableDistanceLabel": "ברירת מחדל של מרחק מרבי שניתן לצפייה",
   "units": {
     "miles": "מייל",
     "kilometers": "קילומטרים",

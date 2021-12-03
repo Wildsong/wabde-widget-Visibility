@@ -4,6 +4,7 @@ define({
   "portalURLError": "ArcGIS Online -organisaatiosi tai Portal for ArcGIS -ohjelman määritetty URL-osoite ei kelpaa.",
   "privilegeError": "käyttäjäroolisi ei voi suorittaa analyysia. Analyysin suoritus edellyttää, että organisaatiosi pääkäyttäjä myöntää sinulle tietyt <a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">käyttöoikeudet</a>.",
   "noServiceError": "Korkeustason analyysipalvelu ei ole käytettävissä. Tarkista ArcGIS Online -organisaatiosi tai Portal for ArcGIS -kokoonpanoasetuksesi.",
+  "maximumRangeMessage": "Tarkkailualueen enimmäisarvon on oltava suurempi kuin tarkkailualueen vähimmäisarvo eikä se saa olla suurempi kuin ${limit} ${units}.",
   "serviceURLPlaceholder": "Syötä näkymäalueen geoprosessointitehtävän URL-osoite",
   "setTask": "Aseta",
   "setTaskTitle": "Määritä näkymäalueen geoprosessointitehtävä",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "Määritä kulma-asetukseksi mailit oletusarvoisesti",
   "defaultObserverHeightLabel": "Tarkkailupisteen korkeuden oletusyksikkö",
   "defaultObservableDistanceLabel": "Tarkkailtavissa olevan etäisyyden oletusyksikkö",
+  "defaultObserveHeightLabel": "Tarkkailijan korkeuden oletusarvo",
+  "defaultMinimumObservableDistanceLabel": "Tarkkailtavissa olevan vähimmäisetäisyyden oletusarvo",
+  "defaultMaximumObservableDistanceLabel": "Tarkkailtavissa olevan enimmäisetäisyyden oletusarvo",
   "units": {
     "miles": "Mailia",
     "kilometers": "Kilometriä",

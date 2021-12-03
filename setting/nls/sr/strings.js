@@ -4,6 +4,7 @@ define({
   "portalURLError": "Konfigurisana URL adresa za vašu ArcGIS Online organizaciju ili Portal for ArcGIS nije validna.",
   "privilegeError": "Vaša korisnička uloga ne može da vrši analizu. Da bi analiza bila izvršena, administrator organizacije mora da vam omogući određene <a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">privileges</a>.",
   "noServiceError": "Servis analize elevacije nije dostupan. Proverite konfiguracije za ArcGIS Online organizaciju ili Portal for ArcGIS.",
+  "maximumRangeMessage": "Maksimalni opseg za posmatranje mora da bude veći od minimalnog opsega za posmatranje i ne sme da bude veći od ${limit}${units}.",
   "serviceURLPlaceholder": "Unesite URL adresu zadatka geoprocesiranja vidnog polja",
   "setTask": "Postavi",
   "setTaskTitle": "Podesi zadatak geoprocesiranja vidnog polja",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "Podrazumevano postavi mil za uglove",
   "defaultObserverHeightLabel": "Podrazumevana jedinica za visinu posmatrača",
   "defaultObservableDistanceLabel": "Podrazumevana jedinica za rastojanje koje je moguće posmatrati",
+  "defaultObserveHeightLabel": "Podrazumevana visina posmatrača",
+  "defaultMinimumObservableDistanceLabel": "Podrazumevano minimalno rastojanje za posmatranje",
+  "defaultMaximumObservableDistanceLabel": "Podrazumevano maksimalno rastojanje za posmatranje",
   "units": {
     "miles": "Milje",
     "kilometers": "Kilometri",

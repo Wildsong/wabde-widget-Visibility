@@ -4,6 +4,7 @@ define({
   "portalURLError": "URL ไปยังองค์กร ArcGIS Online ของคุณ หรือ Portal for ArcGIS ที่กำหนดค่าไว้ใช้ไม่ได้",
   "privilegeError": "บทบาทผู้ใช้ของคุณไม่สามารถทำการวิเคราะห์ได้ หากต้องการดำเนินการวิเคราะห์ ผู้ดูแลองค์กรของคุณจะต้องมอบ<a href=\"http://doc.arcgis.com/en/arcgis-online/reference/roles.htm\" target=\"_blank\">สิทธิ์</a>บางอย่างให้กับคุณ",
   "noServiceError": "เซอร์วิสวิเคราะห์ระดับความสูงไม่พร้อมใช้งาน โปรดตรวจสอบการกำหนดค่าองค์กร ArcGIS Online ของคุณ หรือ Portal for ArcGIS",
+  "maximumRangeMessage": "ระยะที่สังเกตได้สูงสุดต้องมากกว่าช่วงที่สังเกตได้ต่ำสุด และต้องไม่เกิน ${limit} ${units}",
   "serviceURLPlaceholder": "โปรดใส่ URL งานประมวลผลข้อมูลภูมิศาสตร์ Viewshed",
   "setTask": "ตั้ง",
   "setTaskTitle": "ตั้งค่างานประมวลผลข้อมูลภูมิศาสตร์ Viewshed",
@@ -11,6 +12,9 @@ define({
   "defaultMilsForAnglesLabel": "ตั้งค่า mils สำหรับมุมเป็นค่าเริ่มต้น",
   "defaultObserverHeightLabel": "ยูนิตความสูงตัวสังเกตการณ์เริ่มต้น",
   "defaultObservableDistanceLabel": "หน่วยระยะทางที่สังเกตการณ์ได้เริ่มต้น",
+  "defaultObserveHeightLabel": "ความสูงของผู้สังเกตการณ์เริ่มต้น",
+  "defaultMinimumObservableDistanceLabel": "ระยะทางที่สังเกตการณ์ค่าเริ่มต้นขั้นต่ำ",
+  "defaultMaximumObservableDistanceLabel": "ระยะทางที่สังเกตการณ์ค่าเริ่มต้นสูงสุด",
   "units": {
     "miles": "ไมล์",
     "kilometers": "กิโลเมตร",
